@@ -13,14 +13,20 @@ set :version, '0.0.1'
 
 helpers do
 	def protected!
+		unless authenticated?
+			redirect '/login'
+		end
 	end
 
 	def authenticated?
+		!session[:logged_in].nil? && session[:logged_in]
 	end
 end
 
 get '/' do 
-	erb :index, locals: { test: "ok" }
+	protected!
+
+	erb :index, locals: { test: "welcome" }
 end
 
 get '/login' do
@@ -28,10 +34,22 @@ get '/login' do
 end
 
 post '/login' do
+	if params[:username] == settings.config['auth']['username'] && params[:password] == settings.config['auth']['password']
+		session[:logged_in] = true
+	end
+
+	redirect '/'
 end
 
 get '/logout' do
+	if session[:logged_in]
+		session.delete(:logged_in)
+	end
+
+	redirect '/'
 end
 
 post '/update' do
+	protected!
+	"ada"
 end
