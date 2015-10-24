@@ -2,6 +2,14 @@ require 'sinatra'
 
 enable :sessions
 
+helpers do
+	def protected!
+	end
+
+	def authenticated?
+	end
+end
+
 get '/' do 
 	erb :index
 end
