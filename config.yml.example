@@ -1,9 +1,9 @@
 auth:
-	username: admin
-	password: secret
+  username: admin
+  password: secret
 server:
-	host: 0.0.0.0
-	port: 9090
+  host: 0.0.0.0
+  port: 9090
 webhook:
-	hooks: ./tmp/hooks.json
-	log: ./tmp/stdout.log
+  hooks: ./tmp/hooks.json
+  log: ./tmp/stdout.log

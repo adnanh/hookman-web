@@ -1,6 +1,15 @@
 require 'sinatra'
+require 'tilt/erubis'
+require 'yaml'
 
 enable :sessions
+
+set :config, YAML.load_file('config.yml')
+
+set :bind, settings.config['server']['host'] || '127.0.0.1'
+set :port, settings.config['server']['port'] || 9999
+
+set :version, '0.0.1'
 
 helpers do
 	def protected!
@@ -11,7 +20,7 @@ helpers do
 end
 
 get '/' do 
-	erb :index
+	erb :index, locals: { test: "ok" }
 end
 
 get '/login' do
