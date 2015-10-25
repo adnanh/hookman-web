@@ -1,3 +1,35 @@
 body {
 	margin: 0;
+	background-color: #E0E4CC;
 }
+
+.header {
+	background-color: #333;
+	padding: 5px;
+	color: #666;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+
+.content {
+	background-color: #fff;
+}
+
+.error {
+	color: #CC333F;
+}
+
+.header a:link, .header a:active, .header a:visited {
+	font-weight: bold;
+	color: #bbb;
+	text-decoration: none;
+}
+
+.header a:hover, .header a.active {
+	color: #eee;
+}
+
+.header a.active {
+	color: #fff;
+}
+

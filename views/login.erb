@@ -1,7 +1,36 @@
-Login
+<div class="row">
+	<div class="twelve columns">&nbsp;</div>
+</div>	
+
+<div class="row">
+	<div class="four columns">&nbsp;</div> 
+	<div class="four columns"><%= message %></div>
+</div>
+
+<div class="row">
+	<div class="twelve columns">&nbsp;</div>
+</div>	
 
 <form action="/login" method="post">
-<input type="text" name="username" />
-<input type="password" name="password" />
-<input type="submit" name="submit" value="Login" />
+	<div class="row">
+		<div class="four columns">&nbsp;</div>
+		<div class="four columns">
+			<label for="username">Username</label>
+			<input type="text" name="username" class="u-full-width" />
+		</div>
+		</div>
+		<div class="row">
+		<div class="four columns">&nbsp;</div>
+		<div class="four columns">
+			<label for="password">Password</label>
+			<input type="password" name="password" class="u-full-width" />
+		</div>
+		</div>
+		<div class="row">
+		<div class="four columns">&nbsp;</div>
+		<div class="four columns">
+			<input type="submit" name="submit" value="Login" class="button-primary u-pull-right" />
+		</div>
+		</div>
+	</div>
 </form>

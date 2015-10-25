@@ -1,2 +1,26 @@
-Index
-<%= test %>
+<div class="row">
+	<div class="twelve columns">
+		<a href="/new" class="button button-success u-full-width">Add a new hook</a>
+	</div>
+</div>
+
+<div class="row">
+	<div class="ten columns">
+		<h4>Current hooks</h4>
+	</div>
+</div>
+
+<% hooks.each do |hook| %>
+	<div class="row">
+		<div class="ten columns">
+			<%= hook['id'] %>
+		</div>
+		<div class="two columns">
+			<a href="/delete" class="button button-danger u-pull-right">Remove</a>
+		</div>
+	</div>
+<% end %>
+
+
+
+

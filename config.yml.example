@@ -4,6 +4,11 @@ auth:
 server:
   host: 0.0.0.0
   port: 9090
+  cookie:
+    name: hookman
+    path: /
+    expire_after: 2592000
+    secret: change_me
 webhook:
   hooks: ./tmp/hooks.json
   log: ./tmp/stdout.log

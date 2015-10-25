@@ -2,9 +2,32 @@
 <html>
 <head>
 	<title>Hookman <%= settings.version %></title>
+	<link rel="stylesheet" type="text/css" href="/normalize.css">
+	<link rel="stylesheet" type="text/css" href="/skeleton.css">
 	<link rel="stylesheet" type="text/css" href="/style.css">
 </head>
 <body>
-	<%= yield %>
+<% if authenticated? %>
+	<div class="u-full-width header">
+		<div class="container">
+			<div class="row">
+				<div class="six columns">
+					<div class="u-pull-left">
+						<a href="/" <%= 'class="active"' if request.path_info == '/' %>>Hooks</a> &nbsp; | &nbsp;
+						<a href="/log" <%= 'class="active"' if request.path_info == '/log' %>>Log</a>
+					</div>
+				</div>
+				<div class="six columns">
+					<div class="u-pull-right">
+						<a href="/logout">Logout</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<% end %>
+	<div class="container">
+		<%= yield %>
+	</div>
 </body>
 </html>
